@@ -24,7 +24,7 @@ export default class App extends AppBase {
   // the starting class must extend appBase, provided by koa-smart
   constructor() {
     super({
-      port: 1212,
+      port: process.env.PORT || 5000,
       // routeParam is an object and it will be give as parametter to all routes
       // so for example you can give models to all your route so you can access on route
       routeParam: {}

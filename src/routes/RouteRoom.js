@@ -32,7 +32,7 @@ export default class RouteRoom extends Route {
         return this.sendBadRequest(ctx, "error");
       }
     } catch (e) {
-      console.log(e);
+      return this.sendBadRequest(ctx, "error");
     }
   }
 
@@ -50,7 +50,6 @@ export default class RouteRoom extends Route {
     try {
       let rooms = await db.all('SELECT * FROM rooms');
       if (rooms) {
-        console.log(rooms);
         return this.sendOk(ctx, rooms);
       } else {
         return this.sendBadRequest(ctx, "error");
